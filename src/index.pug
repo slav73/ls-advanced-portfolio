@@ -11,7 +11,7 @@ html(lang="en")
     .wrapper
       .welcome-section
         section.hero
-          .container
+          .container.hero__container
             header.hero__header
               .hero__logo
                 .logo BA
@@ -23,7 +23,7 @@ html(lang="en")
                       li.nav__item
                         a(href="").nav__link #{item}
               .hero__links
-                - var icons = ["insta", "vk", github]
+                - var icons = ["insta", "vk", "github"]
                 ul.socials
                   each item in icons
                     li.socials__item
@@ -35,5 +35,77 @@ html(lang="en")
                 h1.user-info__desc Личный сайт веб-разработчика
                 .user-info__username Владимир Астаханов
 
-            .hero_btns
-              .scroll-down-btns
+            .hero__btns
+              .scroll-down-btns Скроллить
+
+        section.about
+          .container.about__container
+            .about__left
+              .user
+                .avatar.user__avatar
+                  +image("content/user.jpg", "avatar__pic")
+                ul.user__desc
+                  -
+                    var items = [
+                      ['Проживаю', 'Новосибирск'],
+                      ['Возраст', '27 лет'],
+                      ['Родился', '1 января 1991']
+                    ]
+                  each item in items
+                    li.user__desc-item
+                      .user__key #{item[0]}
+                      .user__value #{item[1]}
+            .about__right
+              h4.about__greet Привет, меня зовут
+              h2.about__title Владимир Астаханов
+              .about__text Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты
+              .about__ps Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нем свой контент. А пока посмотрите, как тут все классно и красиво!
+
+      .triangles
+        svg.triangles__item(viewBox="0 0 1000 100" preserveAspectRatio="none")
+          polygon(points="0,0 0,100 1000,100")
+        svg.triangles__item(viewBox="0 0 1000 100" preserveAspectRatio="none")
+          polygon(points="0,100 1000,100 1000,0")
+
+      .useful
+        .container
+          .useful__title
+            h2.section-title.useful__title-text Чем я могу быть полезен вам
+            .useful__desc
+              p Этот сайт я сделал в рамках обучения в школе онлайн образования LoftSchool. Чуть позже я освежу в нем свой контент. А пока посмотрите, как тут все классно и красиво
+        ul.user-skills
+          -
+            var skills = [
+              ['frontend', ['html', 'css', 'js', 'jquery']],
+              ['workflow', ['git', 'terminal', 'gulp', 'webpack']]
+            ]
+          each item in skills
+            li.user-skills__item.skills-row
+              h3.skills-row__title #{item[0]}
+              ul.skills-row__list
+                each skill in item[1]
+                  li.skills-row__item
+                    .skill
+                      svg(viewBox="0 0 200 200" preserveAspectRatio="none").skill__shape
+                        circle(r="80" cx="100" cy="100").skill__circle.skill__circle--position--under
+                        //-circle(r="80" cx="100" cy="100").skill__circle.skill__circle--position--above
+                        linear-gradient()
+                      .skill__title #{skill}
+
+      .works
+        h2.section-title Мои работы
+        .works__left
+          .slider
+            img().slider__fillpic
+            .slider__preview
+              ul.previews
+                - for (var i = 0; i < 3; i++)
+                  li.previews__item
+                    img.previews__pic
+            .slider__buttons
+              .slider-button
+                button.slider-button__item.slider-button__item--slide--prev
+                button.slider-button__item.slider-button__item--slide--next
+        .works__right
+          .works__tags
+          .works__text
