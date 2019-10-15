@@ -33,10 +33,12 @@ html(lang="en")
             .hero__content
               .user-info
                 h1.user-info__desc Личный сайт веб-разработчика
-                .user-info__username Владимир Астаханов
+                .user-info__username Владимир
+                .user-info__username Астаханов
 
             .hero__btns
-              .scroll-down-btns Скроллить
+              .scroll-down-btns Скролл
+              +icon("scroll", "scroll__icon")
 
         section.about
           .container.about__container
@@ -53,7 +55,7 @@ html(lang="en")
                     ]
                   each item in items
                     li.user__desc-item
-                      .user__key #{item[0]}
+                      .user__key #{item[0]}:
                       .user__value #{item[1]}
             .about__right
               h4.about__greet Привет, меня зовут
@@ -68,44 +70,112 @@ html(lang="en")
           polygon(points="0,100 1000,100 1000,0")
 
       .useful
-        .container
-          .useful__title
-            h2.section-title.useful__title-text Чем я могу быть полезен вам
-            .useful__desc
-              p Этот сайт я сделал в рамках обучения в школе онлайн образования LoftSchool. Чуть позже я освежу в нем свой контент. А пока посмотрите, как тут все классно и красиво
-        ul.user-skills
-          -
-            var skills = [
-              ['frontend', ['html', 'css', 'js', 'jquery']],
-              ['workflow', ['git', 'terminal', 'gulp', 'webpack']]
-            ]
-          each item in skills
-            li.user-skills__item.skills-row
-              h3.skills-row__title #{item[0]}
-              ul.skills-row__list
-                each skill in item[1]
-                  li.skills-row__item
-                    .skill
-                      svg(viewBox="0 0 200 200" preserveAspectRatio="none").skill__shape
-                        circle(r="80" cx="100" cy="100").skill__circle.skill__circle--position--under
-                        //-circle(r="80" cx="100" cy="100").skill__circle.skill__circle--position--above
-                        linear-gradient()
-                      .skill__title #{skill}
+        .container.useful__container
+          .useful__left
+          .useful__right
+            .useful__title
+              h2.section-title.useful__title-text Чем я могу быть полезен вам
+              .useful__desc
+                p 
+                  | Этот сайт я сделал в рамках обучения в школе онлайн образования LoftSchool. 
+                  | Чуть позже я освежу в нем свой контент. А пока посмотрите, как тут все классно и красиво
+            ul.user-skills
+              -
+                var skills = [
+                  ['frontend', ['html', 'css', 'js', 'jquery']],
+                  ['workflow', ['git', 'terminal', 'gulp', 'webpack']]
+                ]
+              each item in skills
+                li.user-skills__item.skills-row
+                  h3.skills-row__title #{item[0]}
+                  ul.skills-row__list
+                    each skill in item[1]
+                      li.skills-row__item
+                        .skill
+                          svg(viewBox="0 0 200 200" preserveAspectRatio="none").skill__shape
+                            circle(r="80" cx="100" cy="100").skill__circle.skill__circle--position--under
+                            circle(r="80" cx="100" cy="100").skill__circle.skill__circle--position--above
+                            linear-gradient()
+                          .skill__title #{skill}
 
       .works
-        h2.section-title Мои работы
-        .works__left
-          .slider
-            img().slider__fillpic
-            .slider__preview
-              ul.previews
-                - for (var i = 0; i < 3; i++)
-                  li.previews__item
-                    img.previews__pic
-            .slider__buttons
-              .slider-button
-                button.slider-button__item.slider-button__item--slide--prev
-                button.slider-button__item.slider-button__item--slide--next
-        .works__right
-          .works__tags
-          .works__text
+        .container
+          h2.section-title Мои работы
+          .works__container
+            .works__left
+              .slider
+                +image("works/work.png", "slider__fillpic")
+                .slider__preview
+                  ul.previews
+                    - for (var i = 0; i < 3; i++)
+                      li.previews__item
+                        img.previews__pic
+                .slider__buttons
+                  .slider-button
+                    button.slider-button__item.slider-button__item--slide--prev
+                    button.slider-button__item.slider-button__item--slide--next
+            .works__right
+              .works__tags
+                - var tags = ['html', 'css', 'javascript']
+                ul.tags
+                  - for (var i = 0; i < 3; i++)
+                    li.tags__item #{tags[i]}
+              .works__text
+                h3.works__title Сайт школы образования
+                .works_desc-text
+                  p 
+                    | Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool. 
+                    | 2 месяца только самых тяжелых испытаний и бессонных ночей
+                a.iconed-link
+                  +icon("link", "iconed-link__site")
+                  .iconed-link__text Посмотреть сайт
+
+      .impressions
+        .container
+          .impressions__header
+            h2.section-title Что обо мне говорят
+            .arrow
+              +icon("arrow-down", "arrow__left")
+            .arrow
+              +icon("arrow-down", "arrow__right")
+          -var impressions = ['Ковальчук Дмитрий', 'Сабанцев Владимир']
+          ul.impressions__list
+            - for (var i = 0; i < 2; i++)
+              li.impressions__item
+                .impressions__desc-text
+                  p 
+                  | Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool. 
+                  | 2 месяца только самых тяжелых испытаний и бессонных ночей
+                .impressions__author
+                  +image("content/user.jpg", "impressions__pic")
+                  .impressions__author-data
+                    .impressions__author-name #{impressions[i]}
+                    .impressions__author-position Преподаватель
+
+      .contacts
+        .container
+          h2.section-title Связаться со мной
+          form.form(action="")
+            label.form__block
+              .form__title Введите ваше имя
+              +icon("user", "iconed-link__icon")
+              input.form__input(type="text")
+            label.form__block
+              .form__title Введите ваш e-mail
+              +icon("envelope", "iconed-link__icon")
+              input.form__input(type="text")
+            label.form__block
+              .form__title Сообщение к письму
+              +icon("message", "iconed-link__icon")
+              input.form__input(type="textarea")
+            .form__button
+              button(type="button") ОТПРАВИТЬ
+ 
+      .footer
+        footer.footer
+          nav.nav
+            ul.nav__list
+              each item in menu
+                li.nav__item
+                  a(href="").nav__link #{item}
+

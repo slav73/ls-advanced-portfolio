@@ -1,0 +1,19 @@
+.arrow {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    border: 1px solid black;
+    border-radius: 50%;
+    &__left, &__right {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        left: 50%;
+        margin-left: -25%;
+        top: 50%;
+        margin-top: -25%;
+    }
+    &__left {
+        transform: rotate(180deg);
+    }
+}
