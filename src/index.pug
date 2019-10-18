@@ -109,20 +109,22 @@ html(lang="en")
                   ul.previews
                     - for (var i = 0; i < 3; i++)
                       li.previews__item
-                        img.previews__pic
+                        +image("previews/prev1.png", "previews__fillpic")
                 .slider__buttons
-                  .slider-button
-                    button.slider-button__item.slider-button__item--slide--prev
-                    button.slider-button__item.slider-button__item--slide--next
+                  button.slider-button__item
+                    +icon("arrow-down", "slider-button__item--slide--prev")
+                  button.slider-button__item
+                    +icon("arrow-down", "slider-button__item--slide--next")
             .works__right
               .works__tags
-                - var tags = ['html', 'css', 'javascript']
+                - var tags = ['HTML', 'CSS', 'Javascript']
                 ul.tags
                   - for (var i = 0; i < 3; i++)
-                    li.tags__item #{tags[i]}
+                    li.tags__item 
+                      a.tags__text #{tags[i]}
               .works__text
                 h3.works__title Сайт школы образования
-                .works_desc-text
+                .works__desc-text
                   p 
                     | Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool. 
                     | 2 месяца только самых тяжелых испытаний и бессонных ночей
@@ -142,40 +144,65 @@ html(lang="en")
           ul.impressions__list
             - for (var i = 0; i < 2; i++)
               li.impressions__item
-                .impressions__desc-text
-                  p 
-                  | Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool. 
-                  | 2 месяца только самых тяжелых испытаний и бессонных ночей
-                .impressions__author
-                  +image("content/user.jpg", "impressions__pic")
-                  .impressions__author-data
-                    .impressions__author-name #{impressions[i]}
-                    .impressions__author-position Преподаватель
+                .impressions__desc
+                  +icon("quote", "impressions__quote")
+                .impressions__desc-content
+                  .impressions__desc-text
+                    p 
+                    | Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool. 
+                    | 2 месяца только самых тяжелых испытаний и бессонных ночей
+                  .impressions__author
+                    +image("content/user.jpg", "impressions__pic")
+                    .impressions__author-data
+                      .impressions__author-name #{impressions[i]}
+                      .impressions__author-position Преподаватель
 
       .contacts
         .container
           h2.section-title Связаться со мной
           form.form(action="")
-            label.form__block
-              .form__title Введите ваше имя
-              +icon("user", "iconed-link__icon")
-              input.form__input(type="text")
-            label.form__block
-              .form__title Введите ваш e-mail
-              +icon("envelope", "iconed-link__icon")
-              input.form__input(type="text")
-            label.form__block
-              .form__title Сообщение к письму
-              +icon("message", "iconed-link__icon")
-              input.form__input(type="textarea")
-            .form__button
-              button(type="button") ОТПРАВИТЬ
+            .form__row
+              label.form__block
+                .form__title Введите ваше имя
+                .form__input-field
+                  +icon("user", "iconed-link__icon")
+                  input.form__input(type="text")
+              label.form__block
+                .form__title Введите ваш e-mail
+                .form__input-field                
+                  +icon("envelope", "iconed-link__icon")
+                  input.form__input(type="text")
+            .form__row
+              label.form__block
+                .form__title Сообщение к письму
+                .form__input-field
+                  +icon("message", "iconed-link__icon")
+                  input.form__input(type="textarea")
+            button.form__button(type="button") ОТПРАВИТЬ
  
       .footer
-        footer.footer
-          nav.nav
-            ul.nav__list
-              each item in menu
-                li.nav__item
-                  a(href="").nav__link #{item}
-
+        footer.footer__content
+          .footer__copyright &#169; 2019
+          .footer__user
+            .footer__username Владимир
+            .footer__user-surname Астаханов
+            .footer__desc Личный сайт 
+            .footer__desc веб-разработчика
+          .footer__info
+            nav.nav
+              ul.nav__list
+                each item in menu
+                  li.nav__item
+                    a(href="").nav__link #{item}
+            .footer__desc-block
+              .footer__desc-col
+                .footer__desc Этот сайт я сделал в рамках обучения в
+                .footer__desc школе онлайн образования Loftschool
+                ul.socials
+                  each item in icons
+                    li.socials__item
+                      a(href="").socials__link
+                        +icon(`${item}`, 'socials__icon footer__social')
+              .footer__desc-col
+                .footer__desc Всегда пишите код так, будто сопровождать его будет
+                .footer__desc склонный к насилию психопат, который знает где вы живете

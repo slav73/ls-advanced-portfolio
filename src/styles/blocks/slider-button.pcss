@@ -1,0 +1,21 @@
+.slider-button {
+    &__item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 45px;
+        height: 45px;
+        background-color: #222D3C;
+        &--slide--prev, &--slide--next {
+            width: 10px;
+            height: 10px;
+            fill: white;
+        }
+        &--slide--next {
+            transform: rotate(90deg);
+        }
+        &--slide--prev {
+            transform: rotate(-90deg);
+        }
+    }
+}

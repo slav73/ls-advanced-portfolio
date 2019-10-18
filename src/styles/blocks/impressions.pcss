@@ -1,9 +1,25 @@
 .impressions {
+    margin-bottom: 100px;
     &__header {
         display: flex;
     }
-    &__list {
+    &__list, &__item {
         display: flex;
+    }
+    &__desc {
+        display: flex;
+        margin-right: 30px;
+        margin-bottom: 20px;
+    }
+    &__desc-text {
+        font-size: 20px;
+        opacity: .8;
+        margin-bottom: 30px;
+    }
+    &__quote {
+        width: 100px;
+        height: 100px;
+        opacity: .2;
     }
     &__author {
         display: flex;
@@ -13,12 +29,18 @@
         flex-direction: column;
     }
     &__author-name {
-        font-size: 18px;
+        font-size: 20px;
         font-weight: 700;
+        margin-bottom: 15px;
+    }
+    &__author-position {
+        font-size: 18px;
+        opacity: .8;
     }
     &__pic {
-        width: 50px;
-        height: 50px;
+        width: 75px;
+        height: 75px;
         border-radius: 50%;
+        margin-right: 30px;
     }
 }
