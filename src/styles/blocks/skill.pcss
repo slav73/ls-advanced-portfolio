@@ -1,18 +1,29 @@
-.skill__shape {
-    width: 100px;
-    height: 100px;
-    fill: transparent;
-    stroke-dasharray: 501;
-    transform: rotate(97deg);
-}
+.skill {
+    position: relative;
+    &__shape {
+        width: 150px;
+        height: 150px;
+        fill: transparent;
+        stroke-dasharray: 501;
+        transform: rotate(180deg);
+    }
+    &__circle--position--under {
+        stroke: #E4E4E4;
+        stroke-width: 10px;
+    }
 
-.skill__circle--position--under {
-    stroke: #E4E4E4;
-    stroke-width: 10px;
-}
+    &__circle--position--above {
+        stroke-dasharray: 250;
+        stroke: #6700EB;
+        stroke-width: 22px;
+    }
+    &__title {
+        position: absolute;
+        display: flex;
+        text-align: center;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
 
-.skill__circle--position--above {
-    stroke-dasharray: 250;
-    stroke: #6700EB;
-    stroke-width: 20px;
+    }
 }

@@ -1,29 +1,36 @@
 .useful {
     display: flex;
+    &__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 120px;
+    }
+
+    &__content {
+        display: flex;
+    }
+
+    &__left {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+
+    &__right {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__desc {
+        font-size: 14px;
+        opacity: .6;
+        width: 60%;
+        margin-bottom: 60px;
+    }
+
+    &__title-text {
+        font-size: 28px;
+    }
 }
 
-.useful__container {
-    display: flex;
-}
-
-.useful__left {
-    content: "";
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url("../images/bg/sack.png") no-repeat top / cover;
-}
-
-.useful__right {
-    display: flex;
-    flex-direction: column;
-}
-
-.useful__desc {
-    font-style: italic;
-}
-
-.useful__title-text {
-    font-size: 28px;
-}

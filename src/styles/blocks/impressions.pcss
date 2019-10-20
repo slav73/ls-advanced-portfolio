@@ -1,10 +1,20 @@
 .impressions {
-    margin-bottom: 100px;
+    margin-bottom: 150px;
     &__header {
         display: flex;
     }
     &__list, &__item {
         display: flex;
+    }
+    &__list {
+        width: 70%;
+    }
+    &__item {
+        justify-content: left;
+        margin-right: 30px;
+        &:last-child {
+            margin-right: 0;
+        }
     }
     &__desc {
         display: flex;
@@ -12,14 +22,14 @@
         margin-bottom: 20px;
     }
     &__desc-text {
-        font-size: 20px;
-        opacity: .8;
+        font-size: 16px;
+        opacity: .7;
         margin-bottom: 30px;
     }
     &__quote {
-        width: 100px;
-        height: 100px;
-        opacity: .2;
+        width: 60px;
+        height: 60px;
+        opacity: .05;
     }
     &__author {
         display: flex;
@@ -29,13 +39,13 @@
         flex-direction: column;
     }
     &__author-name {
-        font-size: 20px;
+        font-size: 16px;
         font-weight: 700;
         margin-bottom: 15px;
     }
     &__author-position {
-        font-size: 18px;
-        opacity: .8;
+        font-size: 16px;
+        opacity: .6;
     }
     &__pic {
         width: 75px;
