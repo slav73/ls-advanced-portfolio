@@ -3,6 +3,12 @@
     background-color: black;
     color: white;
     margin-top: 60px;
+    &__col {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        flex: 1;
+    }
     &__content {
         display: flex;
         justify-content: space-between;
@@ -10,16 +16,15 @@
     }
     &__copyright {
         display: flex;
-        width: 170px;
-        margin-right: 50px;
         font-size: 30px;
         font-weight: 600;
         opacity: .3;
+        text-align: top;
+        margin-right: 50px;
     }
     &__user {
         display: flex;
         flex-direction: column;
-        margin-right: 100px;
         font-weight: 700;
     }
     &__user-surname {
@@ -40,6 +45,7 @@
     }
     &__info {
         display: flex;
+        flex: 2;
         flex-direction: column;
     }
 

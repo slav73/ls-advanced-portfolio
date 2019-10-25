@@ -1,1 +1,1 @@
-console.log('this is skills module');
+import Vue from "vue";
