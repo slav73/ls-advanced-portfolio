@@ -1,15 +1,28 @@
 .triangles {
     display: flex;
-    margin-top: -80px;
+    position: relative;
     &__item {
-        width: 50%;
+        width: 100%;
+        position: absolute;
         display: block;
         height: 80px;
         fill: white;
-        &-works {
-            fill: white;
-        margin-top: -180px;
+        &-left {
+            width: 50%;
+            left: 0;
         }
+        &-right {
+            width: 50%;
+            right: 0;
+        }
+    }
+    &__item-top {
+        width: 100%;
+        position: absolute;
+        display: block;
+        margin-top: -169px;
+        fill: white;
+        height: 80px;
     }
 }
 
