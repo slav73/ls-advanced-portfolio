@@ -1,57 +1,33 @@
 .impressions {
     margin-bottom: 150px;
+    &__slider {
+        width: 100%;
+        max-width: 977px;
+    }
     &__header {
         display: flex;
         padding-top: 150px;
+        @include phones {
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 33px;
+        }
     }
     &__list, &__item {
         display: flex;
     }
     &__list {
-        width: 70%;
-    }
-    &__item {
-        justify-content: left;
-        margin-right: 30px;
-        &:last-child {
-            margin-right: 0;
-        }
-    }
-    &__desc {
-        display: flex;
-        margin-right: 30px;
-        margin-bottom: 20px;
-    }
-    &__desc-text {
-        font-size: 16px;
-        opacity: .7;
-        margin-bottom: 30px;
-    }
-    &__quote {
-        width: 60px;
-        height: 60px;
-        opacity: .05;
-    }
-    &__author {
-        display: flex;
-    }
-    &__author-data {
-        display: flex;
         flex-direction: column;
     }
-    &__author-name {
-        font-size: 16px;
-        font-weight: 700;
-        margin-bottom: 15px;
+    &__item {
+        display: flex;
+        flex-direction: column;
+        width: 45%;
+        margin-left: 5%;
+        @include phones {
+            width: 100%;
+            margin-left: 0;
+        }
     }
-    &__author-position {
-        font-size: 16px;
-        opacity: .6;
-    }
-    &__pic {
-        width: 75px;
-        height: 75px;
-        border-radius: 50%;
-        margin-right: 30px;
-    }
+ 
 }

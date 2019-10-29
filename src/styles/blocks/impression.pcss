@@ -1,0 +1,47 @@
+   .impression {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 20px;
+      &__content {
+        display: flex;
+      }  
+      &__text {
+          font-size: 16px;
+          font-weight: 600;
+          line-height: 30px;
+          opacity: .7;
+          margin-bottom: 30px;
+      }
+      &__quote {
+          min-width: 60px;
+          height: 60px;
+          margin-right: 20px;
+          opacity: .05;
+          @include phones {
+            display: none;
+          }
+      }
+      &__author {
+          display: flex;
+      }
+      &__author-data {
+          display: flex;
+          flex-direction: column;
+      }
+      &__author-name {
+          font-size: 16px;
+          font-weight: 700;
+          margin-bottom: 15px;
+      }
+      &__author-position {
+          font-size: 16px;
+          font-weight: 600;
+          opacity: .6;
+      }
+      &__pic {
+          width: 75px;
+          height: 75px;
+          border-radius: 50%;
+          margin-right: 30px;
+      }
+  }

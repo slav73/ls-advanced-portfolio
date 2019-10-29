@@ -124,30 +124,32 @@ html(lang="en")
           polygon(points="1000,0 0,100 0,0")
 
       .budda-section
-        .impressions
-          .container
+        .container
+          .impressions#impressions
             .impressions__header
               h2.section-title.section-title--impression Что обо мне говорят
-              .arrow
-                +icon("arrow-down", "arrow__left")
-              .arrow
-                +icon("arrow-down", "arrow__right")
+              .arrows
+                button(class="arrows__item" @click="previous()" ref="")
+                  +icon("arrow-down", "arrows__left")
+                button(class="arrows__item" @click="next()")
+                  +icon("arrow-down", "arrows__right")
             -var impressions = ['Ковальчук Дмитрий', 'Сабанцев Владимир']
-            ul.impressions__list
-              - for (var i = 0; i < 2; i++)
-                li.impressions__item
-                  .impressions__desc
-                    +icon("quote", "impressions__quote")
-                  .impressions__desc-content
-                    .impressions__desc-text
-                      p 
-                      | Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool. 
-                      | 2 месяца только самых тяжелых испытаний и бессонных ночей
-                    .impressions__author
-                      +image("content/user.jpg", "impressions__pic")
-                      .impressions__author-data
-                        .impressions__author-name #{impressions[i]}
-                        .impressions__author-position Преподаватель
+            .impressions__slider
+              flickity(ref="flickity" :options="flickityOptions").impressions__list
+                - for (var i = 0; i < 6; i++)
+                  .impressions__item
+                    .impression
+                      .impression__content
+                        +icon("quote", "impression__quote")
+                        .impression__text
+                          p 
+                          | Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool. 
+                          | 2 месяца только самых тяжелых испытаний и бессонных ночей
+                      .impression__author
+                        +image("content/user.jpg", "impression__pic")
+                        .impression__author-data
+                          .impression__author-name #{impressions[i]}
+                          .impression__author-position Преподаватель
 
         .contacts
           .container
