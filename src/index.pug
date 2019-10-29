@@ -81,25 +81,7 @@ html(lang="en")
                 p 
                   | Этот сайт я сделал в рамках обучения в школе онлайн образования LoftSchool. 
                   | Чуть позже я освежу в нем свой контент. А пока посмотрите, как тут все классно и красиво
-              //- #skills-component
-              ul.user-skills
-              -
-                var skills = [
-                  ['frontend', ['html', 'css', 'js', 'jquery']],
-                  ['workflow', ['git', 'terminal', 'gulp', 'webpack']]
-                ]
-              each item in skills
-                li.user-skills__item.skills-row
-                  h3.skills-row__title #{item[0]}
-                  ul.skills-row__list
-                    each skill in item[1]
-                      li.skills-row__item
-                        .skill
-                          svg(viewBox="0 0 200 200" preserveAspectRatio="none").skill__shape
-                            circle(r="80" cx="100" cy="100").skill__circle.skill__circle--position--under
-                            circle(r="80" cx="100" cy="100").skill__circle.skill__circle--position--above
-                            linear-gradient()
-                          .skill__title #{skill}
+              #skills-component
 
       .works
         .container
