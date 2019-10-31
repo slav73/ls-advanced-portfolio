@@ -1,4 +1,4 @@
-const parallax = document.querySelector('.parallax');
+const parallax = document.querySelector('.hero');
 const layers = parallax.children;
 const windowWidth = document.body.clientWidth;
 
