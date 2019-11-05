@@ -10,7 +10,7 @@ html(lang="en")
   body
     .wrapper
       .welcome-section
-        section.hero
+        .parallax
           .parallax__layer(data-speed="0.1")
             +image("baloon/1.png", "parallax__image")
           .parallax__layer(data-speed="0.13")
@@ -25,6 +25,7 @@ html(lang="en")
             +image("baloon/6.png", "parallax__image")
           .parallax__layer(data-speed="0.28")
             +image("baloon/7.png", "parallax__image")
+        section.hero
           .container.hero__container
             header.hero__header
               .hero__logo
@@ -219,5 +220,6 @@ html(lang="en")
                 .footer__desc 
                   | Всегда пишите код так, будто сопровождать его будет
                   | склонный к насилию психопат, который знает где вы живете
+                .footer__author Martin Golding
 
     include ./templates/entry.pug

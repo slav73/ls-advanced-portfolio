@@ -1,5 +1,7 @@
 .hero {
+    position: relative;
     height: 100vh;
+    z-index: 1;
 }
 
 .hero__container {
@@ -16,6 +18,9 @@
 
 .hero__menu {
     margin: 0 20px;
+    @include tablets {
+        display: none;
+    }
 }
 
 .hero__header {

@@ -5,3 +5,4 @@ if (process.env.NODE_ENV === "development") {
 
 import "./scripts/skills-component";
 import "./scripts/reviews";
+import "./scripts/parallax";
