@@ -44,6 +44,8 @@ html(lang="en")
                     li.socials__item
                       a(href="").socials__link
                         +icon(`${item}`, 'socials__icon')
+              .hero__hamburger
+                +icon("hamburger", "hamburger__icon")
 
             .hero__content
               .user-info
@@ -99,38 +101,37 @@ html(lang="en")
               #skills-component
 
       .works
-        .container
-          h2.section-title Мои работы
-          .works__container
-            .works__left
-              .slider
-                +image("works/work.png", "slider__fillpic")
-                .slider__preview
-                  ul.previews
-                    - for (var i = 0; i < 4; i++)
-                      li.previews__item
-                        +image("previews/prev1.png", "previews__fillpic")
-                .slider__buttons
-                  button.slider-button__item
-                    +icon("arrow-down", "slider-button__item--slide--prev")
-                  button.slider-button__item
-                    +icon("arrow-down", "slider-button__item--slide--next")
-            .works__right
-              .works__tags
-                - var tags = ['HTML', 'CSS', 'Javascript']
-                ul.tags
-                  - for (var i = 0; i < 3; i++)
-                    li.tags__item 
-                      a.tags__text #{tags[i]}
-              .works__text
-                h3.works__title Сайт школы образования
-                .works__desc-text
-                  p 
-                    | Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool. 
-                    | 2 месяца только самых тяжелых испытаний и бессонных ночей
-                a.iconed-link
-                  +icon("link", "iconed-link__site")
-                  .iconed-link__text Посмотреть сайт
+        .container.works__container
+          h2.section-title.works__title-text Мои работы
+          .works__left
+            .slider
+              +image("works/work.png", "slider__fillpic")
+              .slider__preview
+                ul.previews
+                  - for (var i = 0; i < 4; i++)
+                    li.previews__item
+                      +image("previews/prev1.png", "previews__fillpic")
+              .slider__buttons
+                button.slider-button__item
+                  +icon("arrow-down", "slider-button__item--slide--prev")
+                button.slider-button__item
+                  +icon("arrow-down", "slider-button__item--slide--next")
+          .works__right
+            .works__tags
+              - var tags = ['HTML', 'CSS', 'Javascript']
+              ul.tags
+                - for (var i = 0; i < 3; i++)
+                  li.tags__item 
+                    a.tags__text #{tags[i]}
+            .works__text
+              h3.works__title Сайт школы образования
+              .works__desc-text
+                p 
+                  | Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool. 
+                  | 2 месяца только самых тяжелых испытаний и бессонных ночей
+              a.iconed-link
+                +icon("link", "iconed-link__site")
+                .iconed-link__text Посмотреть сайт
 
       .triangles.triangles-works
         svg.triangles__item.triangles__item-left(viewBox="0 0 1000 100" preserveAspectRatio="none")
@@ -167,7 +168,7 @@ html(lang="en")
                           .impression__author-position Преподаватель
 
         .contacts
-          .container
+          .container.contacts__container
             h2.section-title Связаться со мной
             form.form(action="")
               .form__row
@@ -190,7 +191,8 @@ html(lang="en")
                     .form__input-field
                       +icon("message", "iconed-link__icon")
                       textarea.form__textarea(type="textarea" rows="2" placeholder="Требуется ваша помощь в создании сайта. Интересуют сроки и цена вопроса")
-              input.form__button(type="button" value="ОТПРАВИТЬ")
+              .form__row
+                input.form__button(type="button" value="ОТПРАВИТЬ")
   
       .footer
         footer.footer__content

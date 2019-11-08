@@ -8,11 +8,23 @@
         flex-wrap: wrap;
         justify-content: space-between;
         flex: 1;
+        @include phones {
+            flex-direction: column;
+        }
     }
     &__content {
         display: flex;
         justify-content: space-between;
         margin: 80px 0 80px 50px;
+        @include tablets {
+            margin-bottom: 0;
+        }
+        @include phones {
+            width: 90%;
+            margin: 20px 20px;
+            flex-direction: column;
+            justify-content: center;
+        }
     }
     &__copyright {
         display: flex;
@@ -21,11 +33,17 @@
         opacity: .3;
         text-align: top;
         margin-right: 50px;
+        @include phones {
+            font-size: 50px;
+        }
     }
     &__user {
         display: flex;
         flex-direction: column;
         font-weight: 700;
+        @include phones {
+            font-size: 30px;
+        }
     }
     &__user-surname {
         margin-bottom: 20px;
@@ -35,13 +53,23 @@
         margin-bottom: 20px;
         width: 70%;
         opacity: .5;
+        @include phones {
+            width: 90%;
+            font-size: 18px;
+        }
     }
     &__desc-block {
         display: flex;
+        @include tablets {
+            flex-direction: column;
+        }
     }
     &__desc-col {
         display: flex;
         flex-direction: column;
+        @include tablets {
+            margin-bottom: 40px;
+        }
     }
     &__info {
         display: flex;

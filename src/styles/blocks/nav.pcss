@@ -7,7 +7,14 @@
         &--footer {
             font-size: 14px;
             margin-bottom: 35px;
+            @include phones {
+                font-size: 16px;
+            }
         }
+        @tablets {
+            display: flex;
+        }
+    flex-wrap: wrap;
     }
 
     &__item {

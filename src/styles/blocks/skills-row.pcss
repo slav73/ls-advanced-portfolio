@@ -3,6 +3,12 @@
     flex-direction: column;
     margin-left: 50px;
     margin-bottom: 30px;
+    @include tablets {
+        align-items: center;
+    }
+    @include phones {
+        margin-left: 0;
+    }
     &__title {
         font-size: 18px;
         font-weight: 700;
@@ -10,11 +16,18 @@
     }
     &__list {
         display: flex;
+        @include phones {
+            width: 100%;
+            flex-wrap: wrap;
+        }
     }
     &__item {
         margin-right: 40px;
         &:last-child {
             margin-right: 0;
+        }
+        @include phones {
+            margin-right: 10px;
         }
     }
 }

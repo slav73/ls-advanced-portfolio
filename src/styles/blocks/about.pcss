@@ -10,11 +10,26 @@
         justify-content: space-between;
         width: 60%;
         padding-top: 30px;
+        @include tablets {
+            width: 90%;
+        }
+        @include phones {
+            flex-direction: column;
+            align-items: center;
+        }
     }
 
     &__left {
         min-width: 30%;
         margin-right: 70px;
+        @include tablets {
+            min-width: 40%;
+        }
+        @include phones {
+            margin-right: 0;
+            min-width: 60%;
+            margin-bottom: 50px;
+        }
     }
 
     &__greet {
@@ -25,10 +40,34 @@
         font-size: 24px;
         font-weight: 700;
         margin-bottom: 30px;
+        @include phones {
+            font-size: 32px;
+            max-width: 60%;
+            opacity: .7;
+        }
     }
 
     &__text {
         margin-bottom: 60px;
+        @include tablets {
+            font-size: 15px;
+            line-height: 1.6;
+        }
+        @include phones {
+            font-size: 17px;
+            opacity: .7;
+        }
+    }
+    &__ps {
+        @include tablets {
+            font-size: 15px;
+            line-height: 1.6;
+        }
+        @include phones {
+            font-size: 17px;
+            font-style: italic;
+            opacity: .7;
+        }
     }
 }
 

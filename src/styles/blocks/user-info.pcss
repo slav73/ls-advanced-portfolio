@@ -10,9 +10,16 @@
     text-align: center;
     width: 60%;
     font-size: 22px;
+    @include phones {
+        font-size: 18px;
+        opacity: .7;
+    }
 }
 
 .user-info__username {
     font-weight: 700;
     font-size: 40px;
+    @include phones {
+        font-weight: 800;
+    }
 }

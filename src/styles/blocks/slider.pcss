@@ -2,6 +2,9 @@
     display: flex;
     position: relative;
     margin-bottom: 60px;
+    @include phones {
+        width: 100%;
+    }
     &:before {
         display: flex;
         position: absolute;
@@ -13,6 +16,9 @@
         font-size: 250px;
         font-weight: 800;
         opacity: .1;
+        @include phones {
+            display: none;
+        }
     }
     &__preview {
         position: absolute;
@@ -26,6 +32,9 @@
         position: absolute;
         right: 0;
         bottom: -45px;
+        @include phones {
+            bottom: 0;
+        }
     }
     
 }
